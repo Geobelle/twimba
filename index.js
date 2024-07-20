@@ -114,11 +114,10 @@ function getFeedHtml(){
             retweetIconClass='retweeted'
        }
 
-       let commentHtml = ''
-
+       let commentHtml 
         if(tweet.comments.length > 0){
-            tweet.comments.forEach(function(comment){
-                commentHtml += `
+         commentHtml = tweet.comments.map(function(comment){
+                return `
                                 <div class="tweet-reply">
                                     <div class="tweet-inner">
                                         <img src="${comment.profilePic}" class="profile-pic">
